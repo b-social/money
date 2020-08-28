@@ -111,6 +111,20 @@
   (when cu
     (.getNumericCode cu)))
 
+(defn code->numeric-code
+  "Returns the numeric currency code of the given currency code"
+  [code]
+  (-> code
+      (of)
+      (numeric-code-of)))
+
+(defn numeric-code->code
+  "Returns the currency code of the given numeric currency code"
+  [numeric-code]
+  (-> numeric-code
+      (of-numeric-code)
+      (code-of)))
+
 (defmacro defalias
   [^String s]
   `(def ~(symbol s) (CurrencyUnit/of (String/valueOf ~s))))

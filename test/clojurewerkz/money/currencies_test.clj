@@ -40,3 +40,13 @@
   (are [code unit] (is (= code (cu/numeric-code-of unit)))
      756 cu/CHF
      643 cu/RUB))
+
+(deftest test-code->numeric-code
+  (are [numeric-code code] (is (= numeric-code (cu/code->numeric-code code)))
+     756 "CHF"
+     643 "RUB"))
+
+(deftest test-numeric-code->code
+  (are [numeric-code code] (is (= code (cu/numeric-code->code numeric-code)))
+     756 "CHF"
+     643 "RUB"))
