@@ -105,6 +105,12 @@
   (when cu
     (.getCurrencyCode cu)))
 
+(defn numeric-code-of
+  "Returns the numeric currency code of the given currency"
+  [^CurrencyUnit cu]
+  (when cu
+    (.getNumericCode cu)))
+
 (defmacro defalias
   [^String s]
   `(def ~(symbol s) (CurrencyUnit/of (String/valueOf ~s))))

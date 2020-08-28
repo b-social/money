@@ -1,7 +1,7 @@
 (ns clojurewerkz.money.currencies-test
   (:require [clojurewerkz.money.currencies :as cu])
   (:use clojure.test)
-  (:import [org.joda.money Money CurrencyUnit]))
+  (:import [org.joda.money CurrencyUnit]))
 
 
 (deftest test-currency-aliases
@@ -16,7 +16,7 @@
 
 
 (deftest test-currency-numeric-codes
-  (are [code unit] (is (= unit (cu/of-numeric-code code) (cu/of-numeric-code code)))
+  (are [code unit] (is (= unit (cu/of-numeric-code code) (cu/for-numeric-code code)))
     756 cu/CHF
     643 cu/RUB))
 
@@ -35,3 +35,8 @@
 
 (deftest test-code-of
   (is (= "EUR" (cu/code-of cu/EUR))))
+
+(deftest test-numeric-code-of
+  (are [code unit] (is (= code (cu/numeric-code-of unit)))
+     756 cu/CHF
+     643 cu/RUB))
