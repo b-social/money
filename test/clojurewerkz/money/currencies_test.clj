@@ -24,14 +24,11 @@
   (are [code unit] (is (= unit (cu/of-country code) (cu/for-country code)))
     "CH" cu/CHF
     "RU" cu/RUB
-    "LV" cu/LVL))
+    "LV" cu/EUR))
 
 (deftest test-pseudo-currency
   (is (cu/pseudo-currency? (cu/of "XXX")))
   (is (not (cu/pseudo-currency? (cu/of "JPY")))))
-
-(deftest test-additional-currencies-provided-by-clojurewerkz-money
-  (is (cu/pseudo-currency? (cu/of "BTC"))))
 
 (deftest test-code-of
   (is (= "EUR" (cu/code-of cu/EUR))))

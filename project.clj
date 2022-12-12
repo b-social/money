@@ -5,7 +5,7 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.joda/joda-money "0.10.0"]]
+                 [org.joda/joda-money "1.0.3"]]
   :profiles {:dev {:plugins      [[codox "0.8.10"]]
                    :dependencies [[com.novemberain/monger "2.0.0"]
                                   [cheshire               "5.3.1"]
