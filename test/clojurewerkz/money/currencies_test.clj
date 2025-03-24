@@ -24,7 +24,9 @@
   (are [code unit] (is (= unit (cu/of-country code) (cu/for-country code)))
     "CH" cu/CHF
     "RU" cu/RUB
-    "LV" cu/EUR))
+    "LV" cu/EUR
+    "SX" (CurrencyUnit/of "XCG")
+    "CW" (CurrencyUnit/of "XCG")))
 
 (deftest test-pseudo-currency
   (is (cu/pseudo-currency? (cu/of "XXX")))
@@ -36,7 +38,8 @@
 (deftest test-numeric-code-of
   (are [code unit] (is (= code (cu/numeric-code-of unit)))
      756 cu/CHF
-     643 cu/RUB))
+     643 cu/RUB
+     532 (CurrencyUnit/of "XCG")))
 
 (deftest test-code->numeric-code
   (are [numeric-code code] (is (= numeric-code (cu/code->numeric-code code)))
