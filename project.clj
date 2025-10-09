@@ -4,7 +4,7 @@
   :url "http://github.com/clojurewerkz/money"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.11.2"]
                  [org.joda/joda-money "2.0.1"]]
   :profiles {:dev {:plugins      [[codox "0.8.10"]]
                    :dependencies [[com.novemberain/monger "2.0.0"]
